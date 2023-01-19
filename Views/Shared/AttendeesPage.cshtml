@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+}
+
+
+<html>
+    <head>
+        <title>List Of Attendees</title>
+    </head>
+
+    <body>
+        @foreach(var item in Model)
+    {
+        
+        @if (item.willattend == "on")
+        {
+            <h2>Attendee Information </h2>
+            <ul>
+            <li>Name : @item.name</li>
+            <li>Email  @item.email</li>
+            <li>Phone @item.phone</li>
+            <li>Will Attend</li>
+        </ul>
+        }
+    }
+    <input type="button" value="Register" onclick="@("window.location.href='" + @Url.Action("Registration", "Home") + "'")" />
+</body>
+</html>
